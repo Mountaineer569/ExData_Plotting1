@@ -18,12 +18,12 @@ epc[, "DateTime"] <- epc$DateTime
 epc$DateTime <- strptime(epc$DateTime, format = "%d/%m/%Y %H:%M:%S")
 
 # Subset data for selected dates
-epcFeb <- subset(epc, epc$DateTime >= "2007-02-01" & epc$DateTime <= "2007-02-02")
+epcFeb <- subset(epc, epc$Date == "1/2/2007" | epc$Date == "2/2/2007")
 
 # Plot 4
 png("plot4.png", width=480, height=480)
-
-plot(epcFeb$DateTime, epcFeb$Sub_metering_1, xlab = "", ylab = "Global Active Power", type = "l")
+par(mfrow = c(2,2))
+plot(epcFeb$DateTime, epcFeb$Global_active_power, xlab = "", ylab = "Global Active Power", type = "l")
 
 plot(epcFeb$DateTime, epcFeb$Voltage, type="l", xlab="datetime", ylab="Voltage")
 

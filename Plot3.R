@@ -18,7 +18,7 @@ epc[, "DateTime"] <- epc$DateTime
 epc$DateTime <- strptime(epc$DateTime, format = "%d/%m/%Y %H:%M:%S")
 
 # Subset data for selected dates
-epcFeb <- subset(epc, epc$DateTime >= "2007-02-01" & epc$DateTime <= "2007-02-02")
+epcFeb <- subset(epc, epc$Date == "1/2/2007" | epc$Date == "2/2/2007")
 
 
 # Plot 3
